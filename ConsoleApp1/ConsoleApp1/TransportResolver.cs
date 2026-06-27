@@ -2,8 +2,15 @@ namespace TransportChallenge;
 
 public static class TransportResolver
 {
-    public static object? Resolve(string input)
+    public static Vehicle? Resolve(string input)
     {
-        return null;
+        return input.ToLower() switch
+        {
+            "car" => new Car(),
+            "boat" => new Boat(),
+            "plane" => new Airplane(),
+            "helicopter" => new Helicopter(),
+            _ => null
+        };
     }
 }
